@@ -1,17 +1,13 @@
 from django.conf.urls import patterns, url
 
-from polls import views
+from busca import views
 
 urlpatterns = patterns('',
-	#/polls/
+	#pagina principal da busca
 	url(r'^$', views.index, name = 'index'),
-	#/polls/5/
+	#pagina que mostra lista de produtos com o nome requerido
 	url(r'^product/', views.detail, name = 'detail'),
-	#/polls/5/results/
+	#pagina com informacoes sobre o produto escolhido
 	url(r'^(?P<poll_id>\d+)/$', views.final, name = 'final'),
-
-	url(r'^(?P<poll_id>\d+)/results/$', views.results, name = 'results'),
-	#ex: /polls/5/vote/
-	url(r'^(?P<poll_id>\d+)/vote/$', views.vote, name = 'vote')
 	)
 

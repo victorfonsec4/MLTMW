@@ -63,28 +63,29 @@
     </style>
     <link href="{{STATIC_URL}}css/bootstrap-responsive.css" rel="stylesheet">
   </head>
-
   <body>
 
     <div class="container-narrow">
 
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="/polls">Home</a></li>
+          <li class="active"><a href="/busca">Home</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
         <h3 class="muted">Tell me When</h3>
       </div>
 
-      {% for i in mercadoria %}
-      	{{ i }} <br>
-      {% endfor %}
-
-	 <div id="chart_div" style="width: 900px; height: 500px;"></div>
-
+      <div id="chart_div" style="width: 900px; height: 500px;">
       <hr>
-
+      {% if produtos %}
+         {% for produto in produtos %}
+      	 <h3>{{produto.name}}</h3>
+	 {% endfor %}
+      {% else %}
+      	 <h2> Deu merda </h2>
+      {% endif %}
+      </div>
       <div class="footer">
         <p>&copy; Pembita 2013</p>
       </div>

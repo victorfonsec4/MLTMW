@@ -48,7 +48,7 @@
 
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="/polls">Home</a></li>
+          <li class="active"><a href="/busca">Home</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
@@ -62,7 +62,7 @@
         <h2>Selecione o produto desejado entre as opções abaixo</h2><br>
         <ul>
         {% for produto in lista %}
-          <li><a href="/polls/{{ produto.id }}/"><font size = "4">{{ produto.name }}</font></a><br></li>
+          <li><a href="/busca/{{ produto.id }}/"><font size = "4">{{ produto.name }}</font></a><br></li>
         {% endfor %}
         </ul>
       {% else %}
